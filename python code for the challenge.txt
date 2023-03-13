@@ -1,0 +1,11 @@
+import re
+
+n=int(input())
+for i in range(n):
+    pattern = r'^[456]\d{3}(-?\d{4}){3}$'
+    repeated_digits_pattern = r'(\d)(-?\1){3}'
+    number=input()
+    if re.search(r'[^\d-]', number) or re.search(repeated_digits_pattern, number) or not re.match(pattern, number):
+        print("Invalid")
+    else:
+        print("Valid")
